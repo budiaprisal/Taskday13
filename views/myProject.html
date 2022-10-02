@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Halaman Tampil</title>
+    <link rel="icon" type="image/x-icon" href="../public/favicon/favicon.ico">
+    <link rel="stylesheet" href="/public/css/style1.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  </head>
+  <body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="/public/img/logo.png" alt="logo" width="50px" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li>
+              <a class="nav-link active" aria-current="page"  href="/project">Blog</a>
+            </li>
+              
+          </ul>
+
+          
+            {{if .DataSession.IsLogin}}
+            
+              <a href="#" class="text-decoration-none fw-bold text-dark" >Hallo Selamat Datang , {{.DataSession.UserName}}</a>
+              <a href="/logout" class="btn  text-black px-2">Logout</a>
+            
+            {{else}}
+            <div>
+            <a href="/form-register" class="btn  text-black px-2">Register</a>
+            <a href="/form-login" class="btn  text-black  px-2">Login</a>
+          
+          {{end}}
+         
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+
+    {{if .DataSession.IsLogin}}
+    
+   
+    <!--cardProject-->
+    <div class="container-fluid">
+      <h3 class="d-flex justify-content-center mt-3">Halaman Tampil</h3>
+ 
+      
+      <div class="container mt-5">
+        <h3>To do List</h3>
+        <a href="/form-project" class="btn btn-sm btn-primary">Tambah Data</a>
+        <hr/>
+        <table class="table table-dark table-striped table-hover" class="css-serial">
+            <thead>
+                <tr class="text-center" >
+                  <th>No</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    
+                   
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{range $index, $data := .Projects}}
+                    <tr class="text-center" class="">
+                      <td>{{$data.Id}}</td>
+                        <td>{{$data.Title}}</td>
+                        <td>{{$data.Content}}</td>
+                       
+                        <td>
+                            <a href="/form-edit-project/{{$data.Id}}" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="/delete-project/{{$data.Id}}" onclick="return confirm('Aapakah anda yakin ingin menghapus data?')" class="btn btn-sm btn-danger">Hapus</a>
+                        </td>
+                    </tr>
+                    {{ end }}
+            </tbody>
+        </table>
+    </div>
+        
+      </div>
+    </div>
+    {{end}}
+
+
+    
+    <script src="
+    
+    https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js
+    
+    ">
+
+
+    </script>
+    
+  </body>
+</html>

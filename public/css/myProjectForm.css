@@ -1,0 +1,151 @@
+.form {
+  max-width: 1080px;
+  min-width: 940px;
+  border-radius: 7px;
+  /* box-shadow: 0px 4px 16px rgb(180, 180, 180); */
+  margin: 110px auto 20px;
+  padding: 40px 0 50px;
+  /* background-color: rgb(243, 243, 243); */
+}
+
+.judul {
+  width: 100%;
+  padding: 60px 0 40px;
+  text-align: center;
+}
+
+.judul h1 {
+  font-family: "made_tommy_softextrabold";
+  font-size: 2.2rem;
+}
+
+form {
+  width: 600px;
+  margin: 0px auto;
+  font-size: 1.6rem;
+}
+
+form .date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date label:first-child {
+  width: 49%;
+}
+
+.date label:last-child {
+  width: 49%;
+}
+
+.date label:last-child input {
+  width: 100%;
+}
+
+.input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 6px;
+  margin: 4px 0 28px;
+  padding: 14px 18px;
+  box-shadow: 0 4px 6px rgb(189, 189, 189);
+  font-size: 1.4rem;
+  background-color: white;
+}
+
+.checkbox {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0);
+  margin: 4px 0 34px;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.checkbox label {
+  width: 49%;
+  padding: 20px 0 0;
+  font-size: 1.4rem;
+  font-family: "made_tommy_softregular";
+  font-weight: 600;
+  color: #777;
+}
+
+.checkbox input.lgcb {
+  transform: scale(2);
+  margin-left: 4px;
+  margin-right: 12px;
+}
+
+::placeholder {
+  color: red;
+}
+
+textarea {
+  resize: none;
+}
+
+.upload {
+  width: 100%;
+  height: 56px;
+  box-sizing: border-box;
+  border: 2px solid rgba(204, 204, 204, 0);
+  border-radius: 6px;
+  margin: 4px 0 28px;
+  box-shadow: 0 4px 6px rgb(189, 189, 189);
+  position: relative;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 2px 0 2px;
+}
+
+.choose {
+  width: 140px;
+  height: 94%;
+  border-radius: 6px;
+  background-color: #dedede;
+  color: #777;
+  box-shadow: 0 1px 4px 1px rgba(121, 121, 121, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choose:hover {
+  background-color: #333;
+  color: #ccc;
+}
+
+.uploadImg {
+  width: 100%;
+  padding: 16px 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.linkLogo {
+  height: 100%;
+}
+
+.submit {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+button {
+  background-color: #ccc;
+  color: #eee;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 42px;
+  margin: 30px 0 0;
+  font-weight: bold;
+  font-size: 1.45rem;
+}

@@ -1,0 +1,135 @@
+.myProject {
+    max-width: 1080px;
+    min-width: 940px;
+    min-height: 700px;
+    border-radius: 7px;
+    box-shadow: 0px 4px 16px rgb(180, 180, 180);
+    margin: 120px auto 40px;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    background-color: white;
+    /* position: relative; */
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.judul {
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.creatNew {
+    position: fixed;
+    right: 570px;
+    top: 13px;
+    padding: 9px 16px 11px;
+    background-color: #333;
+    color: #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 2px rgb(223, 223, 223);
+    z-index: 9999;
+}
+
+.creatNew:hover {
+    background-color: #999;
+}
+
+.card {
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+    background-color: white;
+    border-radius: 6px;
+}
+.maxSizeImg {
+    display: block;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.imgContent {
+    width: 100%;
+}
+
+.judulCard {
+    margin: 10px 0 12px;
+}
+
+.judulCard .kotakJudul {
+    height: 26px;
+    overflow: hidden;
+}
+
+.judulCard .durasi {
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.judulCard .durasi div:first-child {
+    width: 80px;
+}
+
+.judulCard p {
+    font-family: 'made_tommy_softregular';
+}
+
+.isiCard {
+    height: 60px;
+    overflow: hidden;
+}
+
+.techCheck {
+    margin: 12px 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.techCheck img {
+    height: 80%;
+    margin-right: 10px;
+}
+
+.editDelete {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.editDelete a {
+    text-decoration: none;
+    display: block;
+    width: 49%;
+    padding: 2px 0;
+    background-color: #333;
+    color: #eaeaea;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.editDelete a:hover {
+    background-color: #999;
+}
+
+
+
+
+.navLeft ul:nth-child(1) li:nth-child(1){
+    width: 24%;
+}
+
+.navLeft ul:nth-child(1) li:nth-child(2){
+    width: 36%;
+    text-align: center;
+}
+
+.navLeft ul:nth-child(1) li:nth-child(3) a:hover{
+    color: #333;
+}

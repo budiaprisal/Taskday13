@@ -1,0 +1,76 @@
+.card {
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  border-radius: 6px;
+}
+.maxSizeImg {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.imgContent {
+  width: 100%;
+}
+
+.judulCard {
+  margin: 10px 0 12px;
+}
+
+.judulCard .kotakJudul {
+  height: 26px;
+  overflow: hidden;
+}
+
+.judulCard .durasi {
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.judulCard .durasi div:first-child {
+  width: 80px;
+}
+
+.judulCard p {
+  font-family: "made_tommy_softregular";
+}
+
+.isiCard {
+  height: 60px;
+  overflow: hidden;
+}
+
+.techCheck {
+  margin: 12px 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.techCheck img {
+  height: 80%;
+  margin-right: 10px;
+  margin: 12px 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.editDelete {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.editDelete div {
+  width: 49%;
+  padding: 2px 0;
+  background-color: #333;
+  color: #eaeaea;
+  border-radius: 5px;
+  text-align: center;
+}

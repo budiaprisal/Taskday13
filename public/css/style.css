@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+}
+
+nav {
+  background-color: rgb(223, 222, 224);
+  display: flex;
+  height: 7vh;
+}
+
+.nav-left {
+  display: flex;
+  padding-left: 100px;
+  align-items: center;
+  flex: 50%; /* untuk mengatur lebar */
+}
+
+.nav-left li {
+  display: inline;
+}
+
+.nav-left ul {
+  display: flex;
+  /* align-items: center; */
+}
+
+.nav-left ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.nav-right {
+  /* background-color: red; */
+  display: flex;
+  flex: 50%;
+  align-items: center; /* untuk mengtaur posisi atas tengah bawah */
+  justify-content: flex-end; /* untuk mengtaur posisi kiri tengah kanan */
+  padding-right: 100px;
+}
+
+.nav-right a {
+  background-color: black;
+  color: white;
+  padding: 8px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container {
+  /* background-color: aqua; */
+  height: 93vh;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center; /* vertical */
+}
+
+section {
+  /* background-color: blueviolet; */
+  display: flex;
+  width: 85%;
+}
+
+.section-left {
+  flex: 80%;
+  padding-left: 10px;
+}
+.section-right {
+  flex: 30%;
+  padding-right: 10px;
+}
+
+.section-right p {
+  color: grey;
+}
+
+.social-media {
+  font-size: 30px;
+}
+
+.social-media i {
+  margin-right: 8px;
+  border-radius: 10px;
+}
+
+.nama {
+  text-align: center;
+}
+
+.p {
+  text-align: justify;
+  margin-right: 100px;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: black;
+  color: white;
+  border-radius: 80px;
+  padding: left 10px;
+}
+
+.button1:hover {
+  background-color: white;
+  color: black;
+  border-radius: 80px;
+}
+
+.skill-container {
+  display: flex;
+}
+
+.btn-edit {
+  background-color: aqua;
+}

@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'made_tommy_softblack';
+    src: url(../font/made_tommy_soft_black-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'made_tommy_softbold';
+    src: url(../font/made_tommy_soft_bold-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'made_tommy_softextrabold';
+    src: url(../font/made_tommy_soft_extrabold-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'made_tommy_softlight';
+    src: url(../font/made_tommy_soft_light-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'made_tommy_softmedium';
+    src: url(../font/made_tommy_soft_medium-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'made_tommy_softregular';
+    src: url(../font/made_tommy_soft_regular-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'made_tommy_softthin';
+    src: url(../font/made_tommy_soft_thin-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

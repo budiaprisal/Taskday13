@@ -1,0 +1,28 @@
+nav {
+  height: 10vh;
+}
+
+.bg-grey {
+  background-color: #b8bbbb;
+}
+
+.container-fluid {
+  height: 90vh;
+}
+
+.card-text {
+  text-align: justify;
+}
+
+.container-form {
+  width: 450px;
+}
+
+input[type="file"] {
+  width: 100%;
+  color: transparent;
+}
+
+.fs-6 {
+  margin-top: -10px;
+}

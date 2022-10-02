@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'made_tommy_softmedium';
+    color: #333;
+    background-color: rgb(222, 227, 236);
+    overflow-y: scroll;
+}

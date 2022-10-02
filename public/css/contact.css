@@ -1,0 +1,37 @@
+form {
+  margin: 90px auto;
+  width: 350px;
+  padding: 10px;
+  /* background-color: red; */
+}
+
+form div {
+  margin-top: 15px;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+form input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: rgb(231, 231, 231);
+  border-radius: 5px;
+  border: 1px solid rgb(231, 231, 231);
+}
+
+form button {
+  background-color: black;
+  color: white;
+  margin-top: 10px;
+  padding: 8px 30px; /* atas bawah */
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
