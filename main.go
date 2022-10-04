@@ -21,8 +21,7 @@ func main() {
 	route := mux.NewRouter()
 	route.PathPrefix("/uploads/").Handler(http.StripPrefix("/uploads/", http.FileServer(http.Dir("./uploads/"))))
 	route.PathPrefix("/public").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
-
-	route.HandleFunc("/", home).Methods("GET")
+	
 
 	route.HandleFunc("/project", myProject).Methods("GET")
 	
@@ -57,7 +56,6 @@ type StructInputDataForm struct {
 	Id              int
 	Title     string
 	Content     string
-	
 	IsLogin  		 bool
 	
 }
@@ -69,20 +67,13 @@ type User struct {
 	Password string
 }
 
-func home(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("views/index.html")
-	if err != nil {
-		panic(err)
-	}
-	template.Execute(w, nil)
-}
+
 
 func myProject(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	tmpl, err := template.ParseFiles("views/myProject.html")
 	
 	
-//
 
 	if err != nil {
 		w.Write([]byte("message : " + err.Error()))
@@ -102,12 +93,12 @@ func myProject(w http.ResponseWriter, r *http.Request) {
 
 
 	fm := session.Flashes("message")
-//perlu loping karena nanti ketika refresh si alertny masih ada
+
 	var flashes []string
 	if len(fm) > 0 {
 		session.Save(r, w)
 		for _, f1 := range fm {
-			// meamasukan flash message
+			
 			flashes = append(flashes, f1.(string))
 		}
 	}
@@ -115,12 +106,6 @@ func myProject(w http.ResponseWriter, r *http.Request) {
 
 	Data.FlashData = strings.Join(flashes, "")
 
-
-
-
-
-
-//
 	
 	data, _ := connection.Conn.Query(context.Background(), "SELECT id, title, content FROM tb_blog")
 	var result []StructInputDataForm
@@ -167,16 +152,10 @@ func myProjectData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	
-	
-
-	
-
- 
 	var title = r.PostForm.Get("inputTitle")
 	var content = r.PostForm.Get("inputContent")
 
 
-	
 	_, err = connection.Conn.Exec(context.Background(), "INSERT INTO tb_blog (title, content  ) VALUES ($1, $2)", title, content)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -281,7 +260,6 @@ func register(w http.ResponseWriter, r *http.Request) {
 
 	passwordHash, _ := bcrypt.GenerateFromPassword([]byte(password), 10)
 
-	// fmt.Println(passwordHash)
 
 	_, err = connection.Conn.Exec(context.Background(), "INSERT INTO tb_user(name, email, password) VALUES ($1, $2, $3)", name, email, passwordHash)
 	if err != nil {
@@ -312,7 +290,7 @@ func formLogin(w http.ResponseWriter, r *http.Request) {
 	if len(fm) > 0 {
 		session.Save(r, w)
 		for _, f1 := range fm {
-			// meamasukan flash message
+			
 			flashes = append(flashes, f1.(string))
 		}
 	}
@@ -331,31 +309,28 @@ func login(w http.ResponseWriter, r *http.Request) {
 
 	user := User{}
 
-	// mengambil data email, dan melakukan pengecekan email
+	
 	err = connection.Conn.QueryRow(context.Background(),
 		"SELECT * FROM tb_user WHERE email=$1", email).Scan(&user.ID, &user.Name, &user.Email, &user.Password)
 
 	if err != nil {
 
-		// fmt.Println("Email belum terdaftar")
-		var store = sessions.NewCookieStore([]byte("SESSION_KEY"))// cookiedari browser
+	
+		var store = sessions.NewCookieStore([]byte("SESSION_KEY"))
 		session, _ := store.Get(r, "SESSION_KEY")
 
-		//session = menyimpan data
-		// _  = menampilkan data
 		session.AddFlash("Email belum terdaftar!", "message")
 		session.Save(r, w)
 
 		http.Redirect(w, r, "/form-login", http.StatusMovedPermanently)
-		// w.WriteHeader(http.StatusBadRequest)
-		// w.Write([]byte("message : Email belum terdaftar " + err.Error()))
+	
 		return
 	}
 
-	// melakukan pengecekan password
+	
 	err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password))
 	if err != nil {
-		// fmt.Println("Password salah")
+	
 		var store = sessions.NewCookieStore([]byte("SESSION_KEY"))
 		session, _ := store.Get(r, "SESSION_KEY")
 
@@ -365,20 +340,19 @@ func login(w http.ResponseWriter, r *http.Request) {
 		
 		
 		http.Redirect(w, r, "/form-login", http.StatusMovedPermanently)
-		// w.WriteHeader(http.StatusBadRequest)
-		// w.Write([]byte("message : Email belum terdaftar " + err.Error()))
+	
 		return
 	}
 
 	var store = sessions.NewCookieStore([]byte("SESSION_KEY"))
 	session, _ := store.Get(r, "SESSION_KEY")
 
-	// berfungsi untuk menyimpan data kedalam session browser
+
 	session.Values["Name"] = user.Name
 	session.Values["Email"] = user.Email
 	session.Values["ID"] = user.ID
 	session.Values["IsLogin"] = true
-	session.Options.MaxAge = 10800 // 3 JAM expred
+	session.Options.MaxAge = 10800 
 
 	
 	
